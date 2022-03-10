@@ -36,7 +36,7 @@ public class Bullet : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Metal"))
         {
-            metalHit = Instantiate(metalHit, transform.position, transform.rotation);
+            metalHit = Instantiate(metalHit, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
 
