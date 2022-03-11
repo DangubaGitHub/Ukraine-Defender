@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Knife : MonoBehaviour
+public class Pipe : MonoBehaviour
 {
 
-    [SerializeField] Animator knifeAnim;
-    
+    [SerializeField] Animator pipeAnim;
+
     void Start()
     {
         
@@ -16,8 +16,8 @@ public class Knife : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            knifeAnim.ResetTrigger("Slash");
-            knifeAnim.SetTrigger("Slash");
+            pipeAnim.ResetTrigger("Hit");
+            pipeAnim.SetTrigger("Hit");
         }
     }
 }

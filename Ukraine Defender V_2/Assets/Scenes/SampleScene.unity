@@ -2263,13 +2263,14 @@ GameObject:
   - component: {fileID: 1476198058}
   - component: {fileID: 1476198060}
   - component: {fileID: 1476198059}
+  - component: {fileID: 1476198061}
   m_Layer: 0
   m_Name: Player_Pipe_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1476198057
 Transform:
   m_ObjectHideFlags: 0
@@ -2390,6 +2391,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1476198061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476198056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e3ce970b1fbb9469f09ffc509bf84a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pipeAnim: {fileID: 1476198060}
 --- !u!1 &1574839548
 GameObject:
   m_ObjectHideFlags: 0
@@ -3295,7 +3309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1959510950
 Transform:
   m_ObjectHideFlags: 0
