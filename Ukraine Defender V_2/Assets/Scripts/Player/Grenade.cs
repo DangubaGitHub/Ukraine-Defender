@@ -30,6 +30,7 @@ public class Grenade : MonoBehaviour
         GameObject grenade = Instantiate(grenadePrefab, throwPoint.position, throwPoint.rotation);
         Rigidbody2D grenadeRb = grenade.GetComponent<Rigidbody2D>();
         grenadeRb.AddForce(throwPoint.up * throwForce, ForceMode2D.Impulse);
+       
 
     }
 }
