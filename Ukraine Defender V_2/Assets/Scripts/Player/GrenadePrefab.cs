@@ -6,6 +6,9 @@ public class GrenadePrefab : MonoBehaviour
 {
 
     [SerializeField] Collider2D circleCollider;
+    [SerializeField] ParticleSystem shrapnel;
+    [SerializeField] ParticleSystem blast;
+    [SerializeField] ParticleSystem smoke;
 
     void Start()
     {
@@ -14,16 +17,26 @@ public class GrenadePrefab : MonoBehaviour
 
     void Update()
     {
-        
+        Invoke("Explosion", 3f);
     }
 
     void Explosion()
     {
 
+        circleCollider.enabled = true;
+
+        EmitExplosion();
+
+        //Destroy(gameObject);
     }
 
-    void ActivateCollider()
+    void EmitExplosion()
     {
-        circleCollider.enabled = true;
+        blast = Instantiate(blast, transform.position, Quaternion.identity);
+        shrapnel = Instantiate(shrapnel, transform.position, Quaternion.identity);
+        smoke = Instantiate(smoke, transform.position, Quaternion.identity);
+        Debug.Log("Explosion");
     }
+
+    
 }

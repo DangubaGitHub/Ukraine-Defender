@@ -137,3 +137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circleCollider: {fileID: 3440387028079365719}
+  shrapnel: {fileID: 7747850499125365032, guid: 36f04b7f7e88bd24eb9f608b6a911f6a, type: 3}
+  blast: {fileID: 2478686714120037146, guid: 8a46a3f898cdb9146bd371556945708a, type: 3}
+  smoke: {fileID: 4544878831131287189, guid: 48bfef6cd3d57334f99aac348d327f7b, type: 3}
