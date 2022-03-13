@@ -18,16 +18,14 @@ public class GrenadePrefab : MonoBehaviour
     void Update()
     {
         Invoke("Explosion", .5f);
+        Invoke("DestroyGrenade", .57f);
     }
 
     void Explosion()
     {
-
         circleCollider.enabled = true;
-
+        
         EmitExplosion();
-
-        Destroy(gameObject);
     }
 
     void EmitExplosion()
@@ -35,8 +33,10 @@ public class GrenadePrefab : MonoBehaviour
         blast = Instantiate(blast, transform.position, Quaternion.identity);
         shrapnel = Instantiate(shrapnel, transform.position, Quaternion.identity);
         smoke = Instantiate(smoke, transform.position, Quaternion.identity);
-        Debug.Log("Explosion");
     }
 
-    
+    void DestroyGrenade()
+    {
+        Destroy(gameObject);
+    }
 }
