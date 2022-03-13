@@ -17,7 +17,7 @@ public class GrenadePrefab : MonoBehaviour
 
     void Update()
     {
-        Invoke("Explosion", 3f);
+        Invoke("Explosion", .5f);
     }
 
     void Explosion()
@@ -27,7 +27,7 @@ public class GrenadePrefab : MonoBehaviour
 
         EmitExplosion();
 
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     void EmitExplosion()
