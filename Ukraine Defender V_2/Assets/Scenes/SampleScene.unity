@@ -2244,6 +2244,7 @@ GameObject:
   - component: {fileID: 1459283125}
   - component: {fileID: 1459283127}
   - component: {fileID: 1459283126}
+  - component: {fileID: 1459283128}
   m_Layer: 0
   m_Name: Player_Idle
   m_TagString: Body
@@ -2374,6 +2375,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1459283128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459283122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cdad27b0af5d2945b66fc8eaa4d436d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedWeapon: 0
 --- !u!1 &1476198056
 GameObject:
   m_ObjectHideFlags: 0
