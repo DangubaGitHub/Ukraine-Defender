@@ -10,9 +10,13 @@ public class PlayerController : MonoBehaviour
     Vector2 mousePos;
     [SerializeField] Camera cam;
 
+    
+
+
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
+        
     }
 
     void Update()

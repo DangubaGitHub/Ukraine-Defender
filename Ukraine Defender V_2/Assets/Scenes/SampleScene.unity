@@ -2500,6 +2500,7 @@ GameObject:
   - component: {fileID: 1459283127}
   - component: {fileID: 1459283126}
   - component: {fileID: 1459283128}
+  - component: {fileID: 1459283129}
   m_Layer: 0
   m_Name: Player_Idle
   m_TagString: Body
@@ -2643,6 +2644,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedWeapon: 0
+--- !u!114 &1459283129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459283122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dfaace78a76bb64bbbd89031ab27c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 363676493}
+  armorBar: {fileID: 1778191671}
 --- !u!1 &1476198056
 GameObject:
   m_ObjectHideFlags: 0
@@ -3128,6 +3143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1778191669}
   - component: {fileID: 1778191670}
+  - component: {fileID: 1778191671}
   m_Layer: 5
   m_Name: Armor Bar
   m_TagString: Untagged
@@ -3207,6 +3223,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1778191671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778191668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6d4887e864eed4ca39567f36a0dbb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorSlider: {fileID: 1778191670}
 --- !u!1 &1787039399
 GameObject:
   m_ObjectHideFlags: 0
