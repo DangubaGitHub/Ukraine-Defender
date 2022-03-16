@@ -16,7 +16,6 @@ public class PipeEnemy : MonoBehaviour
     {
         enemyRb = GetComponent<Rigidbody2D>();
     }
-
     void Update()
     {
         if (Vector2.Distance(transform.position, target.position) < aggroDistance)

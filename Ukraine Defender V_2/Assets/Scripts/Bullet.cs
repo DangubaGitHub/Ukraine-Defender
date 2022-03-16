@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] ParticleSystem woodHit;
     [SerializeField] ParticleSystem concreteHit;
     [SerializeField] ParticleSystem bodyHit;
+    [SerializeField] ParticleSystem bulletHit;
 
     void Start()
     {
@@ -43,6 +44,12 @@ public class Bullet : MonoBehaviour
         if(collision.gameObject.CompareTag("Body"))
         {
             bodyHit = Instantiate(bodyHit, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            bulletHit = Instantiate(bulletHit, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

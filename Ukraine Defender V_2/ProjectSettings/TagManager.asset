@@ -8,6 +8,7 @@ TagManager:
   - Wood
   - Body
   - Metal
+  - Bullet
   layers:
   - Default
   - TransparentFX
