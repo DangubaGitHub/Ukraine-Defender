@@ -24,13 +24,18 @@ public class PlayerDamage : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+      
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("Bullet"))
         {
             TakeDamage(1);
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         if (currentArmor > 0)
         {

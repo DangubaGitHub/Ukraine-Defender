@@ -11,9 +11,11 @@ public class Bullet : MonoBehaviour
     [SerializeField] ParticleSystem bodyHit;
     [SerializeField] ParticleSystem bulletHit;
 
+    public PlayerDamage playerDamage;
+
     void Start()
     {
-        
+        playerDamage = GameObject.Find("Player_Idle").GetComponent<PlayerDamage>();
     }
 
     void Update()
@@ -45,6 +47,8 @@ public class Bullet : MonoBehaviour
         {
             bodyHit = Instantiate(bodyHit, transform.position, Quaternion.identity);
             Destroy(gameObject);
+
+            
         }
 
         if (collision.gameObject.CompareTag("Bullet"))
