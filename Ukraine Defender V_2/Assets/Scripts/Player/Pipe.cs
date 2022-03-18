@@ -6,6 +6,10 @@ public class Pipe : MonoBehaviour
 {
 
     [SerializeField] Animator pipeAnim;
+    [SerializeField] Transform attackPoint;
+    [SerializeField] float attackRange;
+    [SerializeField] LayerMask enemyLayers;
+    [SerializeField] ParticleSystem bodyHit;
 
     void Start()
     {
@@ -16,8 +20,28 @@ public class Pipe : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            pipeAnim.ResetTrigger("Hit");
-            pipeAnim.SetTrigger("Hit");
+            Attack();
         }
+    }
+
+    void Attack()
+    {
+        pipeAnim.ResetTrigger("Hit");
+        pipeAnim.SetTrigger("Hit");
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<GunEnemy>().TakeDamage(3);
+            bodyHit = Instantiate(bodyHit, transform.position, Quaternion.identity);
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

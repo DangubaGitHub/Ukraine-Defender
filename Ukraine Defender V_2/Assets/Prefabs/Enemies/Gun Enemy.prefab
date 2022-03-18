@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 187519001026400620}
   - component: {fileID: 187519001026400619}
   - component: {fileID: 187519001026400621}
-  m_Layer: 0
+  - component: {fileID: 1709753276}
+  m_Layer: 7
   m_Name: Gun Enemy
   m_TagString: Body
   m_Icon: {fileID: 0}
@@ -123,8 +124,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!114 &187519001026400621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +147,28 @@ MonoBehaviour:
   bulletForce: 3
   muzzleFlash: {fileID: 857989797107433053}
   timeBetweenShots: 2
+  enemyAnim: {fileID: 1709753276}
+  currentHealth: 0
+--- !u!95 &1709753276
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187519001026400608}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16b5fd8677837b64eb972cd95fae39b1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &187519001960968393
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 187519001960968392}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,6 +255,10 @@ PrefabInstance:
     - target: {fileID: 2322277399858696582, guid: 187342959d843704fb185a91598c7ffc, type: 3}
       propertyPath: m_Name
       value: Muzzle Flash
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322277399858696582, guid: 187342959d843704fb185a91598c7ffc, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 187342959d843704fb185a91598c7ffc, type: 3}

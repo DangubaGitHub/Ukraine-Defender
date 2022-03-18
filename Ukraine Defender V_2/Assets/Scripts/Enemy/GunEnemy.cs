@@ -16,9 +16,10 @@ public class GunEnemy : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] float timeBetweenShots;
     float nextShotTime;
+    [SerializeField] Animator enemyAnim;
 
     [SerializeField] int currentHealth;
-    int maxHealth = 4;
+    int maxHealth = 5;
 
 
     void Start()
@@ -55,6 +56,11 @@ public class GunEnemy : MonoBehaviour
                 nextShotTime = Time.time + timeBetweenShots;
             }
         }
+
+        if(currentHealth <= 0)
+        {
+            Die();
+        }
     }
 
     void EmitMuzzleFlash()
@@ -62,17 +68,22 @@ public class GunEnemy : MonoBehaviour
         muzzleFlash.Emit(3);
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
          if (currentHealth > 0)
          {
              currentHealth -= damage;
          }
+    }
 
-         else if(currentHealth <= 0)
-         {
-             Destroy(gameObject);
-         }
+    void Die()
+    {
+        enemyAnim.SetBool("IsDead", true);
+
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
+
+        enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -80,16 +91,6 @@ public class GunEnemy : MonoBehaviour
          if(other.gameObject.CompareTag("Bullet"))
          {
              TakeDamage(1);
-         }
-
-         if (other.gameObject.CompareTag("Knife"))
-         {
-             TakeDamage(5);
-         }
-
-         if (other.gameObject.CompareTag("Pipe"))
-         {
-             TakeDamage(3);
          }
 
          if (other.gameObject.CompareTag("Grenade"))
