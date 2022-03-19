@@ -34,6 +34,8 @@ public class Pipe : MonoBehaviour
         {
             enemy.GetComponent<GunEnemy>().TakeDamage(3);
             bodyHit = Instantiate(bodyHit, transform.position, Quaternion.identity);
+
+            enemy.GetComponent<PipeEnemy>().TakeDamage(3);
         }
     }
 
