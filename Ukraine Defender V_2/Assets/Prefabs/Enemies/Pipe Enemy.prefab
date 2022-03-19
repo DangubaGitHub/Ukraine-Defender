@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2117580965}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Attack Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 5080266735241088100}
   - component: {fileID: 5080266735241088103}
   - component: {fileID: 5080266735241088098}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pipe Enemy
   m_TagString: Body
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baba6eb5033ed8a4aa32b0810dca19b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 0.5
   target: {fileID: 0}
   minDistance: 0.3
   aggroDistance: 5
@@ -199,3 +199,4 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
+  timeBetweenHits: 0.5

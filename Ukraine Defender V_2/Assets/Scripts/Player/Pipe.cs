@@ -33,9 +33,9 @@ public class Pipe : MonoBehaviour
         foreach(Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<GunEnemy>().TakeDamage(3);
-            bodyHit = Instantiate(bodyHit, transform.position, Quaternion.identity);
+           // bodyHit = Instantiate(bodyHit, transform.position, Quaternion.identity);
 
-            enemy.GetComponent<PipeEnemy>().TakeDamage(3);
+           // enemy.GetComponent<PipeEnemy>().TakeDamage(3);
         }
     }
 
