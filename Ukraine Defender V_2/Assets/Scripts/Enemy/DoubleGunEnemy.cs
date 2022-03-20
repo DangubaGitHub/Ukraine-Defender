@@ -17,6 +17,8 @@ public class DoubleGunEnemy : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlash2;
     [SerializeField] float timeBetweenShots;
     float nextShotTime;
+    [SerializeField] Animator enemyAnim;
+    [SerializeField] EnemyHealth enemyHealthScript;
 
     void Start()
     {
@@ -41,8 +43,6 @@ public class DoubleGunEnemy : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, target.position, -moveSpeed * Time.deltaTime);
             }
 
-
-
             if (Time.time > nextShotTime)
             {
                 Shoot1();
@@ -51,6 +51,14 @@ public class DoubleGunEnemy : MonoBehaviour
                 nextShotTime = Time.time + timeBetweenShots;
             }
 
+        }
+
+        if(enemyHealthScript.currentHealth <= 0)
+        {
+            GetComponent<Collider2D>().enabled = false;
+            this.enabled = false;
+
+            enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
 

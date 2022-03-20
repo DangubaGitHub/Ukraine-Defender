@@ -51,4 +51,21 @@ public class PlayerDamage : MonoBehaviour
         }
         
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Health"))
+        {
+            healthBar.SetHealth(maxHealth);
+            currentHealth = maxHealth;
+            Destroy(other.gameObject);
+        }
+
+        if(other.CompareTag("Armor"))
+        {
+            armorBar.SetArmor(maxArmor);
+            currentArmor = maxArmor;
+            Destroy(other.gameObject);
+        }
+    }
 }

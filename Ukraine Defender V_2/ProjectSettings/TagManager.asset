@@ -12,6 +12,8 @@ TagManager:
   - Pipe
   - Knife
   - Grenade
+  - Health
+  - Armor
   layers:
   - Default
   - TransparentFX
