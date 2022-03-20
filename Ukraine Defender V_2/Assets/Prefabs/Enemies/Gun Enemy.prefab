@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 187519001026400619}
   - component: {fileID: 187519001026400621}
   - component: {fileID: 1709753276}
+  - component: {fileID: 761467524}
   m_Layer: 7
   m_Name: Gun Enemy
   m_TagString: Body
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &187519001026400622
 Transform:
   m_ObjectHideFlags: 0
@@ -148,7 +149,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 857989797107433053}
   timeBetweenShots: 2
   enemyAnim: {fileID: 1709753276}
-  currentHealth: 0
+  enemyHealthScript: {fileID: 761467524}
 --- !u!95 &1709753276
 Animator:
   serializedVersion: 4
@@ -169,6 +170,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &761467524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187519001026400608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b865c52bb8eca4cb81955331a30305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
 --- !u!1 &187519001960968393
 GameObject:
   m_ObjectHideFlags: 0

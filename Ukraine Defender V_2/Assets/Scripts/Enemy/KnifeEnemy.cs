@@ -11,6 +11,15 @@ public class KnifeEnemy : MonoBehaviour
     [SerializeField] Animator knifeSlash;
     Rigidbody2D enemyRb;
 
+    [SerializeField] EnemyHealth enemyHealthScript;
+
+    [SerializeField] Transform attackPoint;
+    [SerializeField] float attackRange;
+    [SerializeField] LayerMask playerLayer;
+
+    [SerializeField] float timeBetweenHits;
+    float nextHitTime;
+
     void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
@@ -31,9 +40,40 @@ public class KnifeEnemy : MonoBehaviour
 
             if (Vector2.Distance(transform.position, target.position) <= minDistance)
             {
-                knifeSlash.ResetTrigger("Slash");
-                knifeSlash.SetTrigger("Slash");
+                if (Time.time > nextHitTime)
+                {
+                    Attack();
+                    nextHitTime = Time.time + timeBetweenHits;
+                }
             }
         }
+
+        if (enemyHealthScript.currentHealth <= 0)
+        {
+            GetComponent<Collider2D>().enabled = false;
+            this.enabled = false;
+
+            enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+    }
+
+    void Attack()
+    {
+        knifeSlash.ResetTrigger("Slash");
+        knifeSlash.SetTrigger("Slash");
+
+        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+        foreach (Collider2D player in hitPlayer)
+        {
+            player.GetComponent<PlayerDamage>().TakeDamage(5);
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

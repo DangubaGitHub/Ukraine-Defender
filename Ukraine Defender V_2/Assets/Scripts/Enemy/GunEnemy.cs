@@ -18,15 +18,11 @@ public class GunEnemy : MonoBehaviour
     float nextShotTime;
     [SerializeField] Animator enemyAnim;
 
-    //[SerializeField] int currentHealth;
-    //int maxHealth = 5;
-
     [SerializeField] EnemyHealth enemyHealthScript;
 
     void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
-        //currentHealth = maxHealth;
     }
 
     void Update()

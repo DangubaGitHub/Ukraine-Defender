@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &227554288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 227554289}
+  m_Layer: 7
+  m_Name: Attack Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &227554289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227554288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.04, y: 0.156, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 905794812060585073}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &905794812060585075
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,10 +43,10 @@ GameObject:
   - component: {fileID: 905794812060585074}
   - component: {fileID: 905794812060585077}
   - component: {fileID: 905794812060585078}
-  - component: {fileID: 905794812060585079}
   - component: {fileID: 905794812060585076}
   - component: {fileID: 905794812060585072}
-  m_Layer: 0
+  - component: {fileID: 599339050}
+  m_Layer: 7
   m_Name: Knife Enemy
   m_TagString: Body
   m_Icon: {fileID: 0}
@@ -33,7 +64,8 @@ Transform:
   m_LocalPosition: {x: -2.751, y: -2.827, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 227554289}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -125,35 +157,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0017881797, y: 0.037794326}
   m_Size: {x: 0.23922053, y: 0.20478484}
   m_Direction: 1
---- !u!60 &905794812060585079
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905794812060585075}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.3678721, y: 0.24844867}
-    oldSize: {x: 0.33, y: 0.26}
-    newSize: {x: 0.33, y: 0.26}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.029962592, y: 0.19865252}
-      - {x: 0.09000939, y: 0.09630561}
-      - {x: 0.2002572, y: 0.116431825}
-      - {x: 0.20381959, y: 0.19924624}
 --- !u!50 &905794812060585076
 Rigidbody2D:
   serializedVersion: 4
@@ -187,8 +190,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4176e20e1ff5249b36727be2bf46de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  target: {fileID: 689166817316967765, guid: 18b8bc295c0126c4c873cee39a8f21d2, type: 3}
+  moveSpeed: 0.5
+  target: {fileID: 0}
   minDistance: 0.3
   aggroDistance: 5
   knifeSlash: {fileID: 905794812060585077}
+  enemyHealthScript: {fileID: 599339050}
+  attackPoint: {fileID: 227554289}
+  attackRange: 0.1
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  timeBetweenHits: 0.5
+--- !u!114 &599339050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905794812060585075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b865c52bb8eca4cb81955331a30305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0

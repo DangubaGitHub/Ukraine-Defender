@@ -45,13 +45,14 @@ GameObject:
   - component: {fileID: 5080266735241088100}
   - component: {fileID: 5080266735241088103}
   - component: {fileID: 5080266735241088098}
+  - component: {fileID: 2047696725}
   m_Layer: 7
   m_Name: Pipe Enemy
   m_TagString: Body
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5080266735241088099
 Transform:
   m_ObjectHideFlags: 0
@@ -200,3 +201,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   timeBetweenHits: 0.5
+  enemyHealthScript: {fileID: 2047696725}
+--- !u!114 &2047696725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5080266735241088094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b865c52bb8eca4cb81955331a30305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
