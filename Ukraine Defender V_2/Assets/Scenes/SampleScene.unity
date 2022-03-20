@@ -2309,6 +2309,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1459283124}
+    - target: {fileID: 5080266735241088098, guid: e4c7bca78b2ef234998357e3ed2a116d, type: 3}
+      propertyPath: enemyHealthScript
+      value: 
+      objectReference: {fileID: 2047696725}
     - target: {fileID: 5080266735241088099, guid: e4c7bca78b2ef234998357e3ed2a116d, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3579,6 +3583,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997138265}
   m_CullTransparentMesh: 1
+--- !u!1 &2047696718 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5080266735241088094, guid: e4c7bca78b2ef234998357e3ed2a116d, type: 3}
+  m_PrefabInstance: {fileID: 1273892569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2047696725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047696718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b865c52bb8eca4cb81955331a30305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
 --- !u!1001 &689166818770743777
 PrefabInstance:
   m_ObjectHideFlags: 0

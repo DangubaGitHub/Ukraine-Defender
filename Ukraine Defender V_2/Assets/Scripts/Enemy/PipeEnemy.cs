@@ -16,16 +16,21 @@ public class PipeEnemy : MonoBehaviour
     [SerializeField] float attackRange;
     [SerializeField] LayerMask playerLayer;
 
-    int maxHealth = 5;
-    int currentHealth;
+    //int maxHealth = 5;
+   // int currentHealth;
 
     [SerializeField] float timeBetweenHits;
     float nextHitTime;
 
+     
+    [SerializeField] EnemyHealth enemyHealthScript;
+
     void Start()
     {
+        
         enemyRb = GetComponent<Rigidbody2D>();
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
+        
     }
 
     void Update()
@@ -51,13 +56,20 @@ public class PipeEnemy : MonoBehaviour
             }
         }
 
-        if(currentHealth <= 0)
+        if(enemyHealthScript.currentHealth <= 0)
+        {
+            GetComponent<Collider2D>().enabled = false;
+            this.enabled = false;
+
+            enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+        /*if(currentHealth <= 0)
         {
             Die();
-        }
+        }*/
     }
 
-    public void TakeDamage(int damage)
+    /*public void TakeDamage(int damage)
     {
         if(currentHealth > 0)
         {
@@ -73,7 +85,7 @@ public class PipeEnemy : MonoBehaviour
         this.enabled = false;
 
         enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
-    }
+    }*/
 
     void Attack()
     {
@@ -95,7 +107,7 @@ public class PipeEnemy : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    /*private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
@@ -106,5 +118,5 @@ public class PipeEnemy : MonoBehaviour
         {
             TakeDamage(10);
         }
-    }
+    }*/
 }
