@@ -10,8 +10,6 @@ public class PlayerController : MonoBehaviour
     Vector2 mousePos;
     [SerializeField] Camera cam;
 
-    
-
 
     void Start()
     {
