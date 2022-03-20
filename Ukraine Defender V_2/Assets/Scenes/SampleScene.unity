@@ -413,6 +413,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1459283124}
+    - target: {fileID: 187519001026400621, guid: a80d6336e9ed9a249b327a529dd3d711, type: 3}
+      propertyPath: enemyHealthScript
+      value: 
+      objectReference: {fileID: 761467524}
     - target: {fileID: 187519001026400622, guid: a80d6336e9ed9a249b327a529dd3d711, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2060,6 +2064,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2702896393916188313, guid: 2bef028699adcb84d81314b57928ffc9, type: 3}
   m_PrefabInstance: {fileID: 2702896393391690607}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &761467517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 187519001026400608, guid: a80d6336e9ed9a249b327a529dd3d711, type: 3}
+  m_PrefabInstance: {fileID: 434638060}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &761467524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761467517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b865c52bb8eca4cb81955331a30305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
 --- !u!1 &832988587
 GameObject:
   m_ObjectHideFlags: 0

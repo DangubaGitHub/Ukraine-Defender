@@ -38,8 +38,6 @@ public class EnemyHealth : MonoBehaviour
     void EnemyDeath()
     {
         enemyAnim.SetBool("IsDead", true);
-
-      
     }
 
     private void OnCollisionEnter2D(Collision2D other)

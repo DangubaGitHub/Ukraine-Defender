@@ -18,14 +18,15 @@ public class GunEnemy : MonoBehaviour
     float nextShotTime;
     [SerializeField] Animator enemyAnim;
 
-    [SerializeField] int currentHealth;
-    int maxHealth = 5;
+    //[SerializeField] int currentHealth;
+    //int maxHealth = 5;
 
+    [SerializeField] EnemyHealth enemyHealthScript;
 
     void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
     }
 
     void Update()
@@ -57,45 +58,17 @@ public class GunEnemy : MonoBehaviour
             }
         }
 
-        if(currentHealth <= 0)
+        if(enemyHealthScript.currentHealth <= 0)
         {
-            Die();
+            GetComponent<Collider2D>().enabled = false;
+            this.enabled = false;
+
+            enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
 
     void EmitMuzzleFlash()
     {
         muzzleFlash.Emit(3);
-    }
-
-    public void TakeDamage(int damage)
-    {
-         if (currentHealth > 0)
-         {
-             currentHealth -= damage;
-         }
-    }
-
-    void Die()
-    {
-        enemyAnim.SetBool("IsDead", true);
-
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
-
-        enemyRb.constraints = RigidbodyConstraints2D.FreezeAll;
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-         if(other.gameObject.CompareTag("Bullet"))
-         {
-             TakeDamage(1);
-         }
-
-         if (other.gameObject.CompareTag("Grenade"))
-         {
-             TakeDamage(10);
-         }
     }
 }

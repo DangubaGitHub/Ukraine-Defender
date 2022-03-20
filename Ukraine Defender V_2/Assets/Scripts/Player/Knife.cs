@@ -33,8 +33,8 @@ public class Knife : MonoBehaviour
         foreach(Collider2D enemy in hitEnemies)
         {
          
-            enemy.GetComponent<GunEnemy>().TakeDamage(5);
-            bodyHit = Instantiate(bodyHit, transform.position, Quaternion.identity);
+            enemy.GetComponent<EnemyHealth>().EnemyTakeDamage(5);
+            //bodyHit = Instantiate(bodyHit, transform.position, Quaternion.identity);
         }
     }
 
