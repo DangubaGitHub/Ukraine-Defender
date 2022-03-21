@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoubleGun : MonoBehaviour
 {
@@ -12,21 +13,35 @@ public class DoubleGun : MonoBehaviour
     [SerializeField] ParticleSystem muzzleflash2;
     [SerializeField] float bulletForce;
 
+    [SerializeField] Text doubleGunAmmoText;
+    [SerializeField] int maxDoubleAmmo;
+    [SerializeField] int currentDoubleAmmo;
+
     void Start()
     {
-        
+        currentDoubleAmmo = maxDoubleAmmo;
+        UpdateDoubleAmmoCount();
     }
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if (currentDoubleAmmo > 0)
         {
-            Shoot1();
-        }
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot1();
 
-        if(Input.GetButtonUp("Fire1"))
-        {
-            Shoot2();
+                currentDoubleAmmo--;
+                UpdateDoubleAmmoCount();
+            }
+
+            if (Input.GetButtonUp("Fire1"))
+            {
+                Shoot2();
+
+                currentDoubleAmmo--;
+                UpdateDoubleAmmoCount();
+            }
         }
     }
 
@@ -54,5 +69,10 @@ public class DoubleGun : MonoBehaviour
     void EmitMuzzleFlash2()
     {
         muzzleflash2.Emit(3);
+    }
+
+    void UpdateDoubleAmmoCount()
+    {
+        doubleGunAmmoText.text = currentDoubleAmmo.ToString();
     }
 }
