@@ -54,11 +54,13 @@ public class Gun : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Gun Ammo"))
+        Debug.Log("Gun Ammo Pickup");
+        if (other.CompareTag("Gun Ammo"))
         {
-            currentAmmo += 7;
-            UpdateAmmoCount();
-            Destroy(other.gameObject);
+            Debug.Log("Gun Ammo Pickup");
+            //currentAmmo += 7;
+            //UpdateAmmoCount();
+            //Destroy(other.gameObject);
         }
     }
 }
