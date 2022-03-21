@@ -23,8 +23,8 @@ public class GrenadePrefab : MonoBehaviour
 
     void Explosion()
     {
+        //Invoke("EnableCollider", .5f);
         circleCollider.enabled = true;
-        
         EmitExplosion();
     }
 
@@ -37,6 +37,12 @@ public class GrenadePrefab : MonoBehaviour
 
     void DestroyGrenade()
     {
+       
         Destroy(gameObject);
+    }
+
+    void EnableCollider()
+    {
+        
     }
 }

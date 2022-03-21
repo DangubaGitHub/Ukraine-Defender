@@ -46,8 +46,11 @@ public class EnemyHealth : MonoBehaviour
         {
             EnemyTakeDamage(1);
         }
+    }
 
-        if (other.gameObject.CompareTag("Grenade"))
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Grenade"))
         {
             EnemyTakeDamage(10);
         }
