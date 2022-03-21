@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -9,17 +10,27 @@ public class Gun : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletForce;
     [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] int maxAmmo;
+    [SerializeField] int currentAmmo;
+    [SerializeField] Text ammoText;
 
     void Start()
     {
-        
+        currentAmmo = maxAmmo;
+        UpdateAmmoCount();
     }
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if (currentAmmo > 0)
         {
-            Shoot();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+
+                currentAmmo--;
+                UpdateAmmoCount();
+            }
         }
     }
 
@@ -34,5 +45,10 @@ public class Gun : MonoBehaviour
     void EmitMuzzleFlash()
     {
         muzzleFlash.Emit(3);
+    }
+
+    void UpdateAmmoCount()
+    {
+        ammoText.text = currentAmmo.ToString();
     }
 }
