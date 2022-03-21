@@ -51,4 +51,14 @@ public class Gun : MonoBehaviour
     {
         ammoText.text = currentAmmo.ToString();
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Gun Ammo"))
+        {
+            currentAmmo += 7;
+            UpdateAmmoCount();
+            Destroy(other.gameObject);
+        }
+    }
 }
