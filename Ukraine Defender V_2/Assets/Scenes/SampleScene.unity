@@ -2461,6 +2461,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c26a9d3a791dbac4f8dffc7e69879fc8, type: 3}
+--- !u!1 &712971582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 689166817837911862, guid: 18b8bc295c0126c4c873cee39a8f21d2, type: 3}
+  m_PrefabInstance: {fileID: 689166818770743777}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &809176921
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,7 +2867,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!1 &1185336751
 GameObject:
@@ -3563,6 +3568,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1709953304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 689166817316967763, guid: 18b8bc295c0126c4c873cee39a8f21d2, type: 3}
+  m_PrefabInstance: {fileID: 689166818770743777}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1709953311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709953304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5973210e82cbeaf4db29a8ddc44ad681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_Gun: {fileID: 712971582}
 --- !u!1 &1724541172
 GameObject:
   m_ObjectHideFlags: 0

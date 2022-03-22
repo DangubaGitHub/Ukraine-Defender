@@ -10,9 +10,9 @@ public class Gun : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletForce;
     [SerializeField] ParticleSystem muzzleFlash;
-    [SerializeField] int maxAmmo;
-    [SerializeField] int currentAmmo;
-    [SerializeField] Text ammoText;
+    public int maxAmmo;
+    public int currentAmmo;
+    public Text ammoText;
 
     void Start()
     {
@@ -47,20 +47,8 @@ public class Gun : MonoBehaviour
         muzzleFlash.Emit(3);
     }
 
-    void UpdateAmmoCount()
+    public void UpdateAmmoCount()
     {
         ammoText.text = currentAmmo.ToString();
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Gun Ammo Pickup");
-        if (other.CompareTag("Gun Ammo"))
-        {
-            Debug.Log("Gun Ammo Pickup");
-            //currentAmmo += 7;
-            //UpdateAmmoCount();
-            //Destroy(other.gameObject);
-        }
     }
 }
