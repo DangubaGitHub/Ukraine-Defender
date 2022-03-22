@@ -9,12 +9,15 @@ public class Grenade : MonoBehaviour
     [SerializeField] Animator grenadeAnim;
     [SerializeField] Transform throwPoint;
     [SerializeField] float throwForce;
-    [SerializeField] Text grenadeText;
-    [SerializeField] int maxGrenade;
-    [SerializeField] int currentGrenade;
+    public Text grenadeText;
+    public int maxGrenade;
+    public int currentGrenade;
+    
 
     [SerializeField] float timeBetweenShots;
     float nextShotTime;
+
+    
 
     void Start()
     {
@@ -50,7 +53,7 @@ public class Grenade : MonoBehaviour
         grenadeRb.AddForce(throwPoint.up * throwForce, ForceMode2D.Impulse);
     }
 
-    void UpdateGrenadeCount()
+    public void UpdateGrenadeCount()
     {
         grenadeText.text = currentGrenade.ToString();
     }
