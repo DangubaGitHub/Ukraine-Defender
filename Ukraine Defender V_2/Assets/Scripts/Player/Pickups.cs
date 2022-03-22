@@ -8,9 +8,18 @@ public class Pickups : MonoBehaviour
     Gun gunScript;
     [SerializeField] GameObject player_Gun;
 
-    void Start()
+    DoubleGun doubleGunScript;
+    [SerializeField] GameObject player_Double_Gun;
+
+    private void Awake()
     {
         gunScript = player_Gun.GetComponent<Gun>();
+        doubleGunScript = player_Double_Gun.GetComponent<DoubleGun>();
+    }
+
+    void Start()
+    {
+        
     }
 
     void Update()
@@ -32,6 +41,23 @@ public class Pickups : MonoBehaviour
             {
                 gunScript.currentAmmo = gunScript.maxAmmo;
                 gunScript.UpdateAmmoCount();
+            }
+
+            Destroy(other.gameObject);
+        }
+
+        if(other.CompareTag("Double Gun Ammo"))
+        {
+            if(doubleGunScript.currentDoubleAmmo <= 14)
+            {
+                doubleGunScript.currentDoubleAmmo += 14;
+                doubleGunScript.UpdateDoubleAmmoCount();
+            }
+
+            else if(doubleGunScript.currentDoubleAmmo > 14)
+            {
+                doubleGunScript.currentDoubleAmmo = doubleGunScript.maxDoubleAmmo;
+                doubleGunScript.UpdateDoubleAmmoCount();
             }
 
             Destroy(other.gameObject);

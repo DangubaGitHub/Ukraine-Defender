@@ -13,9 +13,11 @@ public class DoubleGun : MonoBehaviour
     [SerializeField] ParticleSystem muzzleflash2;
     [SerializeField] float bulletForce;
 
-    [SerializeField] Text doubleGunAmmoText;
-    [SerializeField] int maxDoubleAmmo;
-    [SerializeField] int currentDoubleAmmo;
+    public Text doubleGunAmmoText;
+    public int maxDoubleAmmo;
+    public int currentDoubleAmmo;
+
+    
 
     void Start()
     {
@@ -71,7 +73,7 @@ public class DoubleGun : MonoBehaviour
         muzzleflash2.Emit(3);
     }
 
-    void UpdateDoubleAmmoCount()
+    public void UpdateDoubleAmmoCount()
     {
         doubleGunAmmoText.text = currentDoubleAmmo.ToString();
     }
