@@ -15,38 +15,68 @@ public class GearCrate : MonoBehaviour
     Grenade grenadeScript;
     [SerializeField] GameObject player_Grenad;
 
-    //GearCrate gearCrateScript;
-    //[SerializeField] GameObject gearCrate;
-
     PlayerDamage playerDamageScript;
     [SerializeField] GameObject playerDamage;
 
+    public bool hasPlayer;
     public bool crateIsOpen;
-
 
     private void Awake()
     {
+        
         gunScript = player_Gun.GetComponent<Gun>();
+
+        
         doubleGunScript = player_Double_Gun.GetComponent<DoubleGun>();
+
+        
         grenadeScript = player_Grenad.GetComponent<Grenade>();
-        //gearCrateScript = gearCrate.GetComponent<GearCrate>();
+
+        
         playerDamageScript = playerDamage.GetComponent<PlayerDamage>();
     }
 
     void Start()
     {
-        
+      
     }
 
     void Update()
     {
-        
+        if (hasPlayer && Input.GetKeyDown("e"))
+        {
+            if (!crateIsOpen)
+            {
+                
+                OpenCrate();
+               
+            }
+
+            else
+            {
+                CrateUsed();
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            hasPlayer = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            hasPlayer = false;
+        }
     }
 
     public void OpenCrate()
     {
-        if (!crateIsOpen)
-        {
             crateAnim.ResetTrigger("CrateOpen");
             crateAnim.SetTrigger("CrateOpen");
 
@@ -66,6 +96,10 @@ public class GearCrate : MonoBehaviour
             grenadeScript.UpdateGrenadeCount();
 
             crateIsOpen = true;
-        }
+    }
+
+    void CrateUsed()
+    {
+        GetComponent<CapsuleCollider2D>().enabled = false;
     }
 }

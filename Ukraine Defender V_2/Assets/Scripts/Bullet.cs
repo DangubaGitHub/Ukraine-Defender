@@ -43,12 +43,22 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(collision.gameObject.CompareTag("Body"))
+        if (collision.gameObject.CompareTag("Gear Crate"))
+        {
+            metalHit = Instantiate(metalHit, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Body"))
+        {
+            bodyHit = Instantiate(bodyHit, transform.position, Quaternion.identity);
+            Destroy(gameObject); 
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
         {
             bodyHit = Instantiate(bodyHit, transform.position, Quaternion.identity);
             Destroy(gameObject);
-
-            
         }
 
         if (collision.gameObject.CompareTag("Bullet"))

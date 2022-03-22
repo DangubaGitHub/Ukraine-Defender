@@ -169,10 +169,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crateAnim: {fileID: 6505026954262450997}
-  player_Gun: {fileID: 0}
   player_Double_Gun: {fileID: 0}
   player_Grenad: {fileID: 0}
   playerDamage: {fileID: 0}
+  hasPlayer: 0
+  crateIsOpen: 0
 --- !u!70 &6505026954262451002
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
