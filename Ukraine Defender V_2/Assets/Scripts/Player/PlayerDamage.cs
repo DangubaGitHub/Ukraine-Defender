@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerDamage : MonoBehaviour
 {
 
-    [SerializeField] HealthBar healthBar;
-    [SerializeField] ArmorBar armorBar;
-    int currentHealth;
-    int currentArmor;
-    int maxHealth = 5;
-    int maxArmor = 5;
+    public HealthBar healthBar;
+    public ArmorBar armorBar;
+    public int currentHealth;
+    public int currentArmor;
+    public int maxHealth = 5;
+    public int maxArmor = 5;
     
 
     void Start()

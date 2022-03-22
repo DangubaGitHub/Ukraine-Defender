@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239396403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.028, y: 0.055, z: 0}
+  m_LocalPosition: {x: -0.006, y: 0.055, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49,7 +49,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &689166816812675655
 Transform:
   m_ObjectHideFlags: 0
@@ -151,6 +151,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knifeAnim: {fileID: 689166816812675656}
+  attackPoint: {fileID: 3681158019438483738}
+  attackRange: 0.1
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  bodyHit: {fileID: 4552620318683253449, guid: 0db5c9c1130483e46890ea7482b2851a, type: 3}
 --- !u!1 &689166816823231490
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,10 +309,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pipeAnim: {fileID: 689166817300320077}
   attackPoint: {fileID: 239396404}
-  attackRange: 0.07
+  attackRange: 0.15
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
+  bodyHit: {fileID: 4552620318683253449, guid: 0db5c9c1130483e46890ea7482b2851a, type: 3}
 --- !u!1 &689166817316967763
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +329,7 @@ GameObject:
   - component: {fileID: 689166817316967767}
   - component: {fileID: 689166817316967769}
   - component: {fileID: 689166817316967768}
+  - component: {fileID: 1709953311}
   m_Layer: 8
   m_Name: Player_Idle
   m_TagString: Body
@@ -479,6 +487,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   armorBar: {fileID: 0}
+  currentHealth: 0
+  currentArmor: 0
+  maxHealth: 5
+  maxArmor: 5
+--- !u!114 &1709953311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689166817316967763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5973210e82cbeaf4db29a8ddc44ad681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_Gun: {fileID: 689166817837911862}
+  player_Double_Gun: {fileID: 689166818331576069}
+  player_Grenad: {fileID: 689166817734300050}
+  gearCrate: {fileID: 0}
 --- !u!1 &689166817625076052
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,6 +662,10 @@ MonoBehaviour:
   grenadeAnim: {fileID: 689166817734300052}
   throwPoint: {fileID: 689166816823231493}
   throwForce: 3
+  grenadeText: {fileID: 0}
+  maxGrenade: 3
+  currentGrenade: 0
+  timeBetweenShots: 1
 --- !u!1 &689166817837911862
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +769,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1473978771805293163, guid: b163f01ab37ef244bbe24d4e33dc2e4f, type: 3}
   bulletForce: 3
   muzzleFlash: {fileID: 63731219426579711}
+  maxAmmo: 14
+  currentAmmo: 0
+  ammoText: {fileID: 0}
 --- !u!1 &689166818182551949
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,6 +909,9 @@ MonoBehaviour:
   muzzleFlash1: {fileID: 63731219250424920}
   muzzleflash2: {fileID: 63731218945433683}
   bulletForce: 3
+  doubleGunAmmoText: {fileID: 0}
+  maxDoubleAmmo: 28
+  currentDoubleAmmo: 0
 --- !u!1 &689166818355178536
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,7 +967,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186962818679920314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.031, y: 0.035, z: 0}
+  m_LocalPosition: {x: 0.017, y: 0.027, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

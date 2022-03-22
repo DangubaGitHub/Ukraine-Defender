@@ -17,6 +17,7 @@ TagManager:
   - Gun Ammo
   - Double Gun Ammo
   - Grenade Ammo
+  - Gear Crate
   layers:
   - Default
   - TransparentFX

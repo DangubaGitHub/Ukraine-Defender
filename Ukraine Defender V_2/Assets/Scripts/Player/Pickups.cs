@@ -14,11 +14,18 @@ public class Pickups : MonoBehaviour
     Grenade grenadeScript;
     [SerializeField] GameObject player_Grenad;
 
+    GearCrate gearCrateScript;
+    [SerializeField] GameObject gearCrate;
+    bool hasPlayer;
+    
+
+
     private void Awake()
     {
         gunScript = player_Gun.GetComponent<Gun>();
         doubleGunScript = player_Double_Gun.GetComponent<DoubleGun>();
         grenadeScript = player_Grenad.GetComponent<Grenade>();
+        gearCrateScript = gearCrate.GetComponent<GearCrate>();
     }
 
     void Start()
@@ -28,7 +35,11 @@ public class Pickups : MonoBehaviour
 
     void Update()
     {
-        
+        if(hasPlayer && Input.GetKeyDown("e"))
+        {
+            gearCrateScript.OpenCrate();
+            
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -76,6 +87,19 @@ public class Pickups : MonoBehaviour
             }
 
             Destroy(other.gameObject);
+        }
+
+        if(other.CompareTag("Gear Crate"))
+        {
+            hasPlayer = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.CompareTag("Gear Crate"))
+        {
+            hasPlayer = false;
         }
     }
 }
