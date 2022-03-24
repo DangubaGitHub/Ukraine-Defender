@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -10,26 +11,40 @@ public class EnemyHealth : MonoBehaviour
     Animator enemyAnim;
     Rigidbody2D enemyRb;
 
+    public int currentHeadCount;
+    [SerializeField] Text headCountText;
+
+    public bool isDead;
+
 
     void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
         enemyAnim = GetComponent<Animator>();
         currentHealth = maxHealth;
+        currentHeadCount = 0;
+        UpdateHeadCount();
     }
 
     void Update()
     {
-        
-        if(currentHealth <= 0)
+
+        if (currentHealth <= 0)
         {
-            EnemyDeath();
+            if (!isDead)
+            {
+                EnemyDeath();
+                AddToCounter();
+                Debug.Log("Counter added");
+                isDead = true;
+
+            }
         }
     }
 
     public void EnemyTakeDamage(int damage)
     {
-        if(currentHealth > 0)
+        if (currentHealth > 0)
         {
             currentHealth -= damage;
         }
@@ -50,9 +65,20 @@ public class EnemyHealth : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Grenade"))
+        if (other.CompareTag("Grenade"))
         {
             EnemyTakeDamage(10);
         }
     }
+
+    public void UpdateHeadCount()
+    {
+        headCountText.text = currentHeadCount.ToString();
+    }
+
+    public void AddToCounter()
+    {
+            currentHeadCount++;
+            UpdateHeadCount();
+    } 
 }

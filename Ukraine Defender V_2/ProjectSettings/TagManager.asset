@@ -18,6 +18,7 @@ TagManager:
   - Double Gun Ammo
   - Grenade Ammo
   - Gear Crate
+  - Streets
   layers:
   - Default
   - TransparentFX
