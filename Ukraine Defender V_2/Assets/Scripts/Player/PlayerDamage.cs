@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerDamage : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class PlayerDamage : MonoBehaviour
     public int currentArmor;
     public int maxHealth = 5;
     public int maxArmor = 5;
+
+    [SerializeField] GameObject maxHealthPrefab;
+    [SerializeField] GameObject maxArmorPrefab;
     
 
     void Start()
@@ -59,6 +63,9 @@ public class PlayerDamage : MonoBehaviour
             healthBar.SetHealth(maxHealth);
             currentHealth = maxHealth;
             Destroy(other.gameObject);
+
+            GameObject addMaxHealth = Instantiate(maxHealthPrefab, transform.position, Quaternion.identity);
+            addMaxHealth.GetComponentInChildren<TextMeshPro>();
         }
 
         if(other.CompareTag("Armor"))
@@ -66,6 +73,9 @@ public class PlayerDamage : MonoBehaviour
             armorBar.SetArmor(maxArmor);
             currentArmor = maxArmor;
             Destroy(other.gameObject);
+
+            GameObject addMaxArmor = Instantiate(maxArmorPrefab, transform.position, Quaternion.identity);
+            addMaxArmor.GetComponentInChildren<TextMeshPro>();
         }
     }
 }

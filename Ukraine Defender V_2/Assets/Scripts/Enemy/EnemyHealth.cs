@@ -36,9 +36,10 @@ public class EnemyHealth : MonoBehaviour
                 EnemyDeath();
                 AddToCounter();
                 Debug.Log("Counter added");
-                isDead = true;
+                
 
             }
+            isDead = true;
         }
     }
 
