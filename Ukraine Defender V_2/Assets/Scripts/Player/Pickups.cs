@@ -41,7 +41,9 @@ public class Pickups : MonoBehaviour
 
     void Start()
     {
-        
+        gunScript.currentAmmo = gunScript.maxAmmo;
+        doubleGunScript.currentDoubleAmmo = doubleGunScript.maxDoubleAmmo;
+        grenadeScript.currentGrenade = grenadeScript.maxGrenade;
     }
 
     void Update()
@@ -68,15 +70,15 @@ public class Pickups : MonoBehaviour
                 
             }
 
-            else if(gunScript.currentAmmo > 7)
+            else //(gunScript.currentAmmo > 7)
             {
-                GameObject gunAmmoMax = Instantiate(ammoMaxPrefab, transform.position, Quaternion.identity);
-                gunAmmoMax.GetComponentInChildren<TextMeshPro>();
+                
 
                 gunScript.currentAmmo = gunScript.maxAmmo;
                 gunScript.UpdateAmmoCount();
 
-                
+                GameObject gunAmmoMax = Instantiate(ammoMaxPrefab, transform.position, Quaternion.identity);
+                gunAmmoMax.GetComponentInChildren<TextMeshPro>();
             }
 
             Destroy(other.gameObject);
@@ -95,15 +97,15 @@ public class Pickups : MonoBehaviour
                
             }
 
-            else if(doubleGunScript.currentDoubleAmmo > 14)
+            else //if(doubleGunScript.currentDoubleAmmo > 14)
             {
-                GameObject gunAmmoMax = Instantiate(ammoMaxPrefab, transform.position, Quaternion.identity);
-                gunAmmoMax.GetComponentInChildren<TextMeshPro>();
+                
 
                 doubleGunScript.currentDoubleAmmo = doubleGunScript.maxDoubleAmmo;
                 doubleGunScript.UpdateDoubleAmmoCount();
 
-                
+                GameObject gunAmmoMax = Instantiate(ammoMaxPrefab, transform.position, Quaternion.identity);
+                gunAmmoMax.GetComponentInChildren<TextMeshPro>();
             }
 
             Destroy(other.gameObject);
@@ -111,16 +113,18 @@ public class Pickups : MonoBehaviour
 
         if(other.CompareTag("Grenade Ammo"))
         {
-            if(grenadeScript.currentGrenade <= 1)
+            if(grenadeScript.currentGrenade < 2)
             {
+                GameObject grenade1Add = Instantiate(add1GrenadePrefab, transform.position, Quaternion.identity);
+                grenade1Add.GetComponentInChildren<TextMeshPro>();
+
                 grenadeScript.currentGrenade += 1;
                 grenadeScript.UpdateGrenadeCount();
 
-                GameObject grenade1Add = Instantiate(add1GrenadePrefab, transform.position, Quaternion.identity);
-                grenade1Add.GetComponentInChildren<TextMeshPro>();
+                
             }
 
-            else if(grenadeScript.currentGrenade >= 2)
+            else //if(grenadeScript.currentGrenade >= 2)
             {
                 grenadeScript.currentGrenade = grenadeScript.maxGrenade;
                 grenadeScript.UpdateGrenadeCount();

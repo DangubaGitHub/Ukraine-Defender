@@ -300,6 +300,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 932780644}
     - target: {fileID: 6505026954262450996, guid: 9b6384d46f8171646a187e69360884ae, type: 3}
+      propertyPath: gearCratePrefab
+      value: 
+      objectReference: {fileID: 6029052527608680776, guid: 5e18a75f8fb6ef14e98a6df6fa7f4884, type: 3}
+    - target: {fileID: 6505026954262450996, guid: 9b6384d46f8171646a187e69360884ae, type: 3}
       propertyPath: player_Double_Gun
       value: 
       objectReference: {fileID: 628081453}
@@ -5232,6 +5236,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb5e7c4444f765446838d1a7913f62b8, type: 3}
+--- !u!1001 &177103396731427822
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2254655114605264949, guid: 5e18a75f8fb6ef14e98a6df6fa7f4884, type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254655114605264949, guid: 5e18a75f8fb6ef14e98a6df6fa7f4884, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.0156618
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254655114605264949, guid: 5e18a75f8fb6ef14e98a6df6fa7f4884, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5696099
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254655114605264949, guid: 5e18a75f8fb6ef14e98a6df6fa7f4884, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.015515754
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254655114605264949, guid: 5e18a75f8fb6ef14e98a6df6fa7f4884, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254655114605264949, guid: 5e18a75f8fb6ef14e98a6df6fa7f4884, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254655114605264949, guid: 5e18a75f8fb6ef14e98a6df6fa7f4884, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254655114605264949, guid: 5e18a75f8fb6ef14e98a6df6fa7f4884, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254655114605264949, guid: 5e18a75f8fb6ef14e98a6df6fa7f4884, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254655114605264949, guid: 5e18a75f8fb6ef14e98a6df6fa7f4884, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254655114605264949, guid: 5e18a75f8fb6ef14e98a6df6fa7f4884, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029052527608680776, guid: 5e18a75f8fb6ef14e98a6df6fa7f4884, type: 3}
+      propertyPath: m_Name
+      value: Gear Crate
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029052527608680776, guid: 5e18a75f8fb6ef14e98a6df6fa7f4884, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e18a75f8fb6ef14e98a6df6fa7f4884, type: 3}
 --- !u!1001 &689166818770743777
 PrefabInstance:
   m_ObjectHideFlags: 0

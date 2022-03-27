@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GearCrate : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class GearCrate : MonoBehaviour
 
     public bool hasPlayer;
     public bool crateIsOpen;
+
+    [SerializeField] GameObject gearCratePrefab;
 
     private void Awake()
     {
@@ -49,6 +52,8 @@ public class GearCrate : MonoBehaviour
             {
                 
                 OpenCrate();
+
+
                
             }
 
@@ -94,6 +99,9 @@ public class GearCrate : MonoBehaviour
 
             grenadeScript.currentGrenade = grenadeScript.maxGrenade;
             grenadeScript.UpdateGrenadeCount();
+
+            GameObject gearCrateAdd = Instantiate(gearCratePrefab, transform.position, Quaternion.identity);
+            gearCrateAdd.GetComponentInChildren<TextMeshPro>();
 
             crateIsOpen = true;
     }
