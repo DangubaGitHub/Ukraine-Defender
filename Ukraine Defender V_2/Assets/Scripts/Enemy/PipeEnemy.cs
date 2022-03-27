@@ -49,7 +49,7 @@ public class PipeEnemy : MonoBehaviour
             }
         }
 
-        if(enemyHealthScript.currentHealth <= 0 && enemyHealthScript.isDead)
+        if(enemyHealthScript.currentHealth <= 0)
         {
             GetComponent<Collider2D>().enabled = false;
             this.enabled = false;

@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
     Animator enemyAnim;
     Rigidbody2D enemyRb;
 
-    public int currentHeadCount;
+    public static int currentHeadCount;
     [SerializeField] Text headCountText;
 
     public bool isDead;
@@ -36,10 +36,12 @@ public class EnemyHealth : MonoBehaviour
                 EnemyDeath();
                 AddToCounter();
                 Debug.Log("Counter added");
-                
+
 
             }
+
             isDead = true;
+
         }
     }
 
