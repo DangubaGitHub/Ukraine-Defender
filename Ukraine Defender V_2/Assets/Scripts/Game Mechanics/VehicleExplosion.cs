@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class VehicleExplosion : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] Animator carAnim;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Grenade"))
+        {
+            carAnim.ResetTrigger("Exploded");
+            carAnim.SetTrigger("Exploded");
+        }
     }
 }
