@@ -11,38 +11,13 @@ public class EnemyHealth : MonoBehaviour
     Animator enemyAnim;
     Rigidbody2D enemyRb;
 
-    public static int currentHeadCount;
-    [SerializeField] Text headCountText;
-
-    public bool isDead;
-
+    [SerializeField] EnemyHeadCounter enemyHeadCounter;
 
     void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
         enemyAnim = GetComponent<Animator>();
         currentHealth = maxHealth;
-        currentHeadCount = 0;
-        UpdateHeadCount();
-    }
-
-    void Update()
-    {
-
-        if (currentHealth <= 0)
-        {
-            if (!isDead)
-            {
-                EnemyDeath();
-                AddToCounter();
-                Debug.Log("Counter added");
-
-
-            }
-
-            isDead = true;
-
-        }
     }
 
     public void EnemyTakeDamage(int damage)
@@ -51,9 +26,15 @@ public class EnemyHealth : MonoBehaviour
         {
             currentHealth -= damage;
         }
+
+        if (currentHealth < 1)
+        {
+            PlayEnemyDeathAnimation();
+            enemyHeadCounter.AddToCounter();
+        }
     }
 
-    void EnemyDeath()
+    void PlayEnemyDeathAnimation()
     {
         enemyAnim.SetBool("IsDead", true);
     }
@@ -73,15 +54,4 @@ public class EnemyHealth : MonoBehaviour
             EnemyTakeDamage(10);
         }
     }
-
-    public void UpdateHeadCount()
-    {
-        headCountText.text = currentHeadCount.ToString();
-    }
-
-    public void AddToCounter()
-    {
-            currentHeadCount++;
-            UpdateHeadCount();
-    } 
 }

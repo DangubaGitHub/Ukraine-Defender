@@ -397,7 +397,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 215aa88692478a648a11c92bb0b8c3e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -491,6 +491,8 @@ MonoBehaviour:
   currentArmor: 0
   maxHealth: 5
   maxArmor: 5
+  maxHealthPrefab: {fileID: 1839454262512760509, guid: 3d77e60b25c092c4fab880d47696e0cc, type: 3}
+  maxArmorPrefab: {fileID: 1236962307254038048, guid: 8c85a45e479169e4a81aa0d7fca49550, type: 3}
 --- !u!114 &1709953311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,7 +508,11 @@ MonoBehaviour:
   player_Gun: {fileID: 689166817837911862}
   player_Double_Gun: {fileID: 689166818331576069}
   player_Grenad: {fileID: 689166817734300050}
-  gearCrate: {fileID: 0}
+  add7AmmoPrefab: {fileID: 6623438074314219466, guid: 3542eddc225a47844b5cb6711a0bb3da, type: 3}
+  ammoMaxPrefab: {fileID: 6051604044400290239, guid: e0d0164c962dd6142a079a2f3df48da1, type: 3}
+  add14AmmoPrefab: {fileID: 1139557563897608614, guid: 55c78f5c59429624ab865e78dff4c6fd, type: 3}
+  add1GrenadePrefab: {fileID: 8882764549893693531, guid: ee3ed8e267520c04998188badd03891e, type: 3}
+  grenadeMaxPrefab: {fileID: 2076568144535232760, guid: c197bca623e9d5f419d15612d0631a01, type: 3}
 --- !u!1 &689166817625076052
 GameObject:
   m_ObjectHideFlags: 0

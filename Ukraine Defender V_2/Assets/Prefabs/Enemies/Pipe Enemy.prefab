@@ -215,6 +215,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  currentHeadCount: 0
-  headCountText: {fileID: 0}
-  isDead: 0
+  enemyHeadCounter: {fileID: 0}

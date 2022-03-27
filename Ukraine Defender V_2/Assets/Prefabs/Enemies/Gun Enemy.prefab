@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &187519001026400622
 Transform:
   m_ObjectHideFlags: 0
@@ -183,9 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  currentHeadCount: 0
-  headCountText: {fileID: 0}
-  isDead: 0
+  enemyHeadCounter: {fileID: 0}
 --- !u!1 &187519001960968393
 GameObject:
   m_ObjectHideFlags: 0
