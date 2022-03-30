@@ -17,32 +17,37 @@ public class Grenade : MonoBehaviour
     [SerializeField] float timeBetweenShots;
     float nextShotTime;
 
-    
+    PauseMenu pauseMenuScript;
+    [SerializeField] GameObject pauseMenu;
 
     void Start()
     {
         currentGrenade = 3;
         UpdateGrenadeCount();
+
+        pauseMenuScript = pauseMenu.GetComponent<PauseMenu>();
     }
 
     void Update()
     {
-        if (currentGrenade > 0)
+        if (!pauseMenuScript.isPaused)
         {
-            if (Input.GetButtonDown("Fire2") && Time.time > nextShotTime)
+            if (currentGrenade > 0)
             {
-                    
-                Invoke("Throw", .5f);
+                if (Input.GetButtonDown("Fire2") && Time.time > nextShotTime)
+                {
 
-                grenadeAnim.ResetTrigger("Throw");
-                grenadeAnim.SetTrigger("Throw");
+                    Invoke("Throw", .5f);
 
-                currentGrenade--;
-                UpdateGrenadeCount();
+                    grenadeAnim.ResetTrigger("Throw");
+                    grenadeAnim.SetTrigger("Throw");
 
-                nextShotTime = Time.time + timeBetweenShots;
+                    currentGrenade--;
+                    UpdateGrenadeCount();
+
+                    nextShotTime = Time.time + timeBetweenShots;
+                }
             }
-
         }
     }
 

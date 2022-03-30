@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     public string mainMenu;
 
     [SerializeField] GameObject pauseScreen;
-    [SerializeField] bool isPaused;
+    public bool isPaused;
 
     void Start()
     {
@@ -30,16 +30,19 @@ public class PauseMenu : MonoBehaviour
         {
             isPaused = false;
             pauseScreen.SetActive(false);
+            Time.timeScale = 1;
         }
         else
         {
             isPaused = true;
             pauseScreen.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
     public void MainMenu()
     {
         SceneManager.LoadScene(mainMenu);
+        Time.timeScale = 1;
     }
 }

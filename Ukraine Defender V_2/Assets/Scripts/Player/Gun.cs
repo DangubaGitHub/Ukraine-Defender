@@ -14,22 +14,30 @@ public class Gun : MonoBehaviour
     public int currentAmmo;
     public Text ammoText;
 
+    PauseMenu pauseMenuScript;
+    [SerializeField] GameObject pauseMenu;
+
     void Start()
     {
         currentAmmo = maxAmmo;
         UpdateAmmoCount();
+
+        pauseMenuScript = pauseMenu.GetComponent<PauseMenu>();
     }
 
     void Update()
     {
-        if (currentAmmo > 0)
+        if (!pauseMenuScript.isPaused)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (currentAmmo > 0)
             {
-                Shoot();
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    Shoot();
 
-                currentAmmo--;
-                UpdateAmmoCount();
+                    currentAmmo--;
+                    UpdateAmmoCount();
+                }
             }
         }
     }

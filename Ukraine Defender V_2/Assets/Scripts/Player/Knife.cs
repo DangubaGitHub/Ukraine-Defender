@@ -10,17 +10,23 @@ public class Knife : MonoBehaviour
     [SerializeField] float attackRange;
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] ParticleSystem bodyHit;
-    
+
+    PauseMenu pauseMenuScript;
+    [SerializeField] GameObject pauseMenu;
+
     void Start()
     {
-        
+        pauseMenuScript = pauseMenu.GetComponent<PauseMenu>();
     }
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if (!pauseMenuScript.isPaused)
         {
-            Attack();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Attack();
+            }
         }
     }
 

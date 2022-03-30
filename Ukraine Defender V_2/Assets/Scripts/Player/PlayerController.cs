@@ -10,18 +10,24 @@ public class PlayerController : MonoBehaviour
     Vector2 mousePos;
     [SerializeField] Camera cam;
 
+    PauseMenu pauseMenuScript;
+    [SerializeField] GameObject pauseMenu;
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
-        
+
+        pauseMenuScript = pauseMenu.GetComponent<PauseMenu>();
     }
 
     void Update()
     {
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        if (!pauseMenuScript.isPaused)
+        {
+            movement.x = Input.GetAxis("Horizontal");
+            movement.y = Input.GetAxis("Vertical");
+            mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        }
     }
 
     private void FixedUpdate()

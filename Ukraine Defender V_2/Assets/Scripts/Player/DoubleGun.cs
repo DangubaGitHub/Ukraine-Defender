@@ -17,32 +17,38 @@ public class DoubleGun : MonoBehaviour
     public int maxDoubleAmmo;
     public int currentDoubleAmmo;
 
-    
+    PauseMenu pauseMenuScript;
+    [SerializeField] GameObject pauseMenu;
 
     void Start()
     {
         currentDoubleAmmo = maxDoubleAmmo;
         UpdateDoubleAmmoCount();
+
+        pauseMenuScript = pauseMenu.GetComponent<PauseMenu>();
     }
 
     void Update()
     {
-        if (currentDoubleAmmo > 0)
+        if (!pauseMenuScript.isPaused)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (currentDoubleAmmo > 0)
             {
-                Shoot1();
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    Shoot1();
 
-                currentDoubleAmmo--;
-                UpdateDoubleAmmoCount();
-            }
+                    currentDoubleAmmo--;
+                    UpdateDoubleAmmoCount();
+                }
 
-            if (Input.GetButtonUp("Fire1"))
-            {
-                Shoot2();
+                if (Input.GetButtonUp("Fire1"))
+                {
+                    Shoot2();
 
-                currentDoubleAmmo--;
-                UpdateDoubleAmmoCount();
+                    currentDoubleAmmo--;
+                    UpdateDoubleAmmoCount();
+                }
             }
         }
     }

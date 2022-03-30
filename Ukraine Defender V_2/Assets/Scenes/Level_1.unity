@@ -3894,7 +3894,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 28
-      m_TileSpriteIndex: 78
+      m_TileSpriteIndex: 86
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3984,7 +3984,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 7
-      m_TileSpriteIndex: 28
+      m_TileSpriteIndex: 78
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3994,7 +3994,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 28
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -10643,8 +10643,8 @@ Tilemap:
     m_Data: {fileID: 92698680, guid: a062d7f6702665948990ca96ac24b926, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 991956392, guid: a062d7f6702665948990ca96ac24b926, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -66560688, guid: a062d7f6702665948990ca96ac24b926, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -1276443351, guid: a062d7f6702665948990ca96ac24b926, type: 3}
   - m_RefCount: 1
@@ -10684,7 +10684,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -1451665674, guid: a062d7f6702665948990ca96ac24b926, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -952412504, guid: a062d7f6702665948990ca96ac24b926, type: 3}
+    m_Data: {fileID: -66560688, guid: a062d7f6702665948990ca96ac24b926, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 1249327700, guid: a062d7f6702665948990ca96ac24b926, type: 3}
   - m_RefCount: 2
@@ -10784,7 +10784,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 1500477320, guid: 371cfc1735589e44ba8f69f646685817, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 741191658, guid: a062d7f6702665948990ca96ac24b926, type: 3}
+    m_Data: {fileID: -952412504, guid: a062d7f6702665948990ca96ac24b926, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -610444163, guid: a062d7f6702665948990ca96ac24b926, type: 3}
   - m_RefCount: 7
@@ -10799,8 +10799,8 @@ Tilemap:
     m_Data: {fileID: 1125336451, guid: a062d7f6702665948990ca96ac24b926, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -270521550, guid: a062d7f6702665948990ca96ac24b926, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 741191658, guid: a062d7f6702665948990ca96ac24b926, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 700
     m_Data:
@@ -49046,6 +49046,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 689166816812675659, guid: 18b8bc295c0126c4c873cee39a8f21d2, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 825181794}
+    - target: {fileID: 689166817300320076, guid: 18b8bc295c0126c4c873cee39a8f21d2, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 825181794}
     - target: {fileID: 689166817316967763, guid: 18b8bc295c0126c4c873cee39a8f21d2, type: 3}
       propertyPath: m_Name
       value: Player_Idle
@@ -49098,6 +49106,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1166425425}
+    - target: {fileID: 689166817316967767, guid: 18b8bc295c0126c4c873cee39a8f21d2, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 825181794}
     - target: {fileID: 689166817316967768, guid: 18b8bc295c0126c4c873cee39a8f21d2, type: 3}
       propertyPath: armorBar
       value: 
@@ -49106,6 +49118,14 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2007286164}
+    - target: {fileID: 689166817316967769, guid: 18b8bc295c0126c4c873cee39a8f21d2, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 825181794}
+    - target: {fileID: 689166817734300054, guid: 18b8bc295c0126c4c873cee39a8f21d2, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 825181794}
     - target: {fileID: 689166817734300054, guid: 18b8bc295c0126c4c873cee39a8f21d2, type: 3}
       propertyPath: grenadeText
       value: 
@@ -49114,6 +49134,14 @@ PrefabInstance:
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 331168767}
+    - target: {fileID: 689166817837911867, guid: 18b8bc295c0126c4c873cee39a8f21d2, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 825181794}
+    - target: {fileID: 689166818331576070, guid: 18b8bc295c0126c4c873cee39a8f21d2, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 825181794}
     - target: {fileID: 689166818331576070, guid: 18b8bc295c0126c4c873cee39a8f21d2, type: 3}
       propertyPath: doubleGunAmmoText
       value: 
@@ -49215,6 +49243,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1704573172095416298, guid: 11e588cdfd15ae545992ae5d33c8423c, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 825181794}
     - target: {fileID: 1704573172342118853, guid: 11e588cdfd15ae545992ae5d33c8423c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
