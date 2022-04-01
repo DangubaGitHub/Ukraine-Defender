@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerDamage : MonoBehaviour
 {
@@ -15,7 +16,22 @@ public class PlayerDamage : MonoBehaviour
 
     [SerializeField] GameObject maxHealthPrefab;
     [SerializeField] GameObject maxArmorPrefab;
-    
+
+    Animator playerAnim;
+    Rigidbody2D playerRb;
+
+    FadeScreen fadeScreenScript;
+    [SerializeField] GameObject fadeScreen;
+
+    public string mainMenu;
+
+    private void Awake()
+    {
+        playerAnim = GetComponent<Animator>();
+        playerRb = GetComponent<Rigidbody2D>();
+
+        fadeScreenScript = fadeScreen.GetComponent<FadeScreen>();
+    }
 
     void Start()
     {
@@ -28,7 +44,11 @@ public class PlayerDamage : MonoBehaviour
 
     void Update()
     {
-      
+        //if (currentHealth < 1)
+        //{
+       //     PlayerDeath();
+       // }
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -52,6 +72,12 @@ public class PlayerDamage : MonoBehaviour
             currentHealth -= damage;
 
             healthBar.SetHealth(currentHealth);
+        }
+
+        if(currentHealth < 1)
+        {
+            fadeScreenScript.FadeToRed();
+            PlayerDeath();
         }
         
     }
@@ -78,4 +104,20 @@ public class PlayerDamage : MonoBehaviour
             addMaxArmor.GetComponentInChildren<TextMeshPro>();
         }
     }
+
+    public void PlayerDeath()
+    {
+            playerAnim.SetBool("IsDead", true);
+            playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
+            GetComponent<PlayerController>().enabled = false;
+            GetComponent<WeaponSwitching>().enabled = false;
+          
+            StartCoroutine(DelayManu());
+    }
+
+     IEnumerator DelayManu()
+     {
+         yield return new WaitForSeconds(2);
+         SceneManager.LoadScene(mainMenu);
+     }
 }

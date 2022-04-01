@@ -11,9 +11,17 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseScreen;
     public bool isPaused;
 
+    FadeScreen fadeScreenScript;
+    [SerializeField] GameObject fadeScreen;
+
+    private void Awake()
+    {
+        fadeScreenScript = fadeScreen.GetComponent<FadeScreen>();
+    }
+
     void Start()
     {
-       
+        fadeScreenScript.FadeFromBlack();
     }
 
     void Update()

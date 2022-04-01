@@ -157,6 +157,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   bodyHit: {fileID: 4552620318683253449, guid: 0db5c9c1130483e46890ea7482b2851a, type: 3}
+  pauseMenu: {fileID: 0}
 --- !u!1 &689166816823231490
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +315,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   bodyHit: {fileID: 4552620318683253449, guid: 0db5c9c1130483e46890ea7482b2851a, type: 3}
+  pauseMenu: {fileID: 0}
 --- !u!1 &689166817316967763
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   cam: {fileID: 0}
+  pauseMenu: {fileID: 0}
 --- !u!114 &689166817316967769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,6 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedWeapon: 0
+  pauseMenu: {fileID: 0}
 --- !u!114 &689166817316967768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,6 +676,7 @@ MonoBehaviour:
   maxGrenade: 3
   currentGrenade: 0
   timeBetweenShots: 1
+  pauseMenu: {fileID: 0}
 --- !u!1 &689166817837911862
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +783,7 @@ MonoBehaviour:
   maxAmmo: 14
   currentAmmo: 0
   ammoText: {fileID: 0}
+  pauseMenu: {fileID: 0}
 --- !u!1 &689166818182551949
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +924,7 @@ MonoBehaviour:
   doubleGunAmmoText: {fileID: 0}
   maxDoubleAmmo: 28
   currentDoubleAmmo: 0
+  pauseMenu: {fileID: 0}
 --- !u!1 &689166818355178536
 GameObject:
   m_ObjectHideFlags: 0
