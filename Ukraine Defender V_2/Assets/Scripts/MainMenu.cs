@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    [SerializeField] string startGame;
+    [SerializeField] string Objectives;
 
     FadeScreen fadeScreenScript;
     [SerializeField] GameObject fadeScreen;
@@ -42,12 +42,12 @@ public class MainMenu : MonoBehaviour
     IEnumerator DelayPlay()
     {
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(startGame);
+        SceneManager.LoadScene(Objectives);
     }
 
     IEnumerator DelayQuit()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
         Application.Quit();
         Debug.Log("Game Quitted");
     }

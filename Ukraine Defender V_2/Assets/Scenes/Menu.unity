@@ -1090,7 +1090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d6f00c510508164698e6218700138c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startGame: Level_1
+  Objectives: Objective
   fadeScreen: {fileID: 1786805870}
 --- !u!114 &1786805876
 MonoBehaviour:
@@ -1106,6 +1106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeScreenBlack: {fileID: 2090225854}
   fadeScreenRed: {fileID: 832322631}
+  fadeTextGameOver: {fileID: 0}
   fadeSpeedBlack: 1
   fadeSpeedRed: 1
 --- !u!1 &1879780144
