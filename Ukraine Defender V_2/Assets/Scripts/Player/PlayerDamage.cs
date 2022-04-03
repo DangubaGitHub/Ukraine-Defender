@@ -117,7 +117,7 @@ public class PlayerDamage : MonoBehaviour
 
      IEnumerator DelayManu()
      {
-         yield return new WaitForSeconds(2);
+         yield return new WaitForSeconds(2.5f);
          SceneManager.LoadScene(mainMenu);
      }
 }

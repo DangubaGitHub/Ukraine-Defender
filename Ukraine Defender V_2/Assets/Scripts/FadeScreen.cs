@@ -8,6 +8,7 @@ public class FadeScreen : MonoBehaviour
 
     [SerializeField] Image fadeScreenBlack;
     [SerializeField] Image fadeScreenRed;
+    [SerializeField] Text fadeTextGameOver;
 
     [SerializeField] float fadeSpeedBlack;
     [SerializeField] float fadeSpeedRed;
@@ -15,6 +16,8 @@ public class FadeScreen : MonoBehaviour
     bool shouldFadeToBlack;
     bool shouldFadeFromBlack;
     bool shouldFadeToRed;
+    bool shouldFadeText;
+
 
     void Start()
     {
@@ -52,6 +55,13 @@ public class FadeScreen : MonoBehaviour
             {
                 shouldFadeToRed = false;
             }
+
+            fadeTextGameOver.color = new Color(fadeTextGameOver.color.r, fadeTextGameOver.color.g, fadeTextGameOver.color.b, Mathf.MoveTowards(fadeTextGameOver.color.a, 1f, fadeSpeedRed * Time.deltaTime));
+
+            if(fadeTextGameOver.color.a == 1f)
+            {
+                shouldFadeText = false;
+            }
         }
     }
 
@@ -70,5 +80,6 @@ public class FadeScreen : MonoBehaviour
     public void FadeToRed()
     {
         shouldFadeToRed = true;
+        shouldFadeText = true;
     }
 }
