@@ -234,7 +234,7 @@ MonoBehaviour:
   bulletForce: 3
   muzzleFlash1: {fileID: 3861564123139817245}
   muzzleFlash2: {fileID: 3861564122810722041}
-  timeBetweenShots: 2
+  timeBetweenShots: 1
   enemyAnim: {fileID: 1170588735}
   enemyHealthScript: {fileID: 1170588736}
 --- !u!114 &1170588736

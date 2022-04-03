@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &187519001026400622
 Transform:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1473978771805293163, guid: b163f01ab37ef244bbe24d4e33dc2e4f, type: 3}
   bulletForce: 3
   muzzleFlash: {fileID: 857989797107433053}
-  timeBetweenShots: 2
+  timeBetweenShots: 1
   enemyAnim: {fileID: 1709753276}
   enemyHealthScript: {fileID: 761467524}
 --- !u!95 &1709753276
