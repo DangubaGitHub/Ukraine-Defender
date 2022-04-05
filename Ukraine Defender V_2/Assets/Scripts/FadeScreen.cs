@@ -16,7 +16,7 @@ public class FadeScreen : MonoBehaviour
     bool shouldFadeToBlack;
     bool shouldFadeFromBlack;
     bool shouldFadeToRed;
-    bool shouldFadeText;
+    //bool shouldFadeText;
 
 
     void Start()
@@ -60,7 +60,7 @@ public class FadeScreen : MonoBehaviour
 
             if(fadeTextGameOver.color.a == 1f)
             {
-                shouldFadeText = false;
+                //shouldFadeText = false;
             }
         }
     }
@@ -80,6 +80,6 @@ public class FadeScreen : MonoBehaviour
     public void FadeToRed()
     {
         shouldFadeToRed = true;
-        shouldFadeText = true;
+        //shouldFadeText = true;
     }
 }
