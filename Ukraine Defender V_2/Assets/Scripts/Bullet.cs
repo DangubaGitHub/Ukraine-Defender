@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
 
     public PlayerDamage playerDamage;
 
+
     void Start()
     {
         playerDamage = GameObject.Find("Player_Idle").GetComponent<PlayerDamage>();
@@ -28,43 +29,67 @@ public class Bullet : MonoBehaviour
         if(collision.gameObject.CompareTag("Concrete"))
         {
             concreteHit = Instantiate(concreteHit, transform.position, Quaternion.identity);
+
+            BulletAudioManager.instance.PlayBulletSFX(Random.Range(2, 5));
+
             Destroy(gameObject);
         }
 
         if(collision.gameObject.CompareTag("Wood"))
         {
             woodHit = Instantiate(woodHit, transform.position, Quaternion.identity);
+
+            BulletAudioManager.instance.PlayBulletSFX(Random.Range(10, 12));
+
             Destroy(gameObject);
         }
 
         if (collision.gameObject.CompareTag("Metal"))
         {
             metalHit = Instantiate(metalHit, transform.position, Quaternion.identity);
+
+            BulletAudioManager.instance.PlayBulletSFX(Random.Range(6, 9));
+
             Destroy(gameObject);
+            
         }
 
         if (collision.gameObject.CompareTag("Gear Crate"))
         {
             metalHit = Instantiate(metalHit, transform.position, Quaternion.identity);
+
+            BulletAudioManager.instance.PlayBulletSFX(Random.Range(8, 9));
+
             Destroy(gameObject);
         }
 
         if (collision.gameObject.CompareTag("Body"))
         {
             bodyHit = Instantiate(bodyHit, transform.position, Quaternion.identity);
+
+            BulletAudioManager.instance.PlayBulletSFX(Random.Range(1, 2));
+
             Destroy(gameObject); 
         }
 
         if (collision.gameObject.CompareTag("Player"))
         {
             bodyHit = Instantiate(bodyHit, transform.position, Quaternion.identity);
+
+            BulletAudioManager.instance.PlayBulletSFX(Random.Range(1, 2));
+
             Destroy(gameObject);
         }
 
         if (collision.gameObject.CompareTag("Bullet"))
         {
             bulletHit = Instantiate(bulletHit, transform.position, Quaternion.identity);
+
+            BulletAudioManager.instance.PlayBulletSFX(Random.Range(6, 7));
+
             Destroy(gameObject);
         }
     }
+
+   
 }

@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class BulletAudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
 
-    public AudioSource[] sfx;
+    public static BulletAudioManager instance;
+
+    public AudioSource[] bulletSoundEffects;
 
     private void Awake()
     {
@@ -23,8 +24,9 @@ public class AudioManager : MonoBehaviour
         
     }
 
-    public void PlaySFX(int sfxToPlay)
+    public void PlayBulletSFX(int soundToPlay)
     {
-        sfx[sfxToPlay].Play();
+        bulletSoundEffects[soundToPlay].Play();
     }
+
 }
