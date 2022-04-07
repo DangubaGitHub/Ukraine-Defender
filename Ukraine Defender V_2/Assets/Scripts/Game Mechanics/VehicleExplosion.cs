@@ -20,6 +20,8 @@ public class VehicleExplosion : MonoBehaviour
     {
         if (other.CompareTag("Grenade"))
         {
+            AudioManager.instance.PlaySFX(34);
+
             carAnim.ResetTrigger("Exploded");
             carAnim.SetTrigger("Exploded");
         }

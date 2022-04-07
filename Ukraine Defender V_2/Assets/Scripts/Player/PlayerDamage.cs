@@ -57,6 +57,8 @@ public class PlayerDamage : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Bullet"))
         {
+
+            AudioManager.instance.PlaySFX(Random.Range(1, 2));
             TakeDamage(1);
         }
     }
@@ -66,14 +68,14 @@ public class PlayerDamage : MonoBehaviour
         if (currentArmor > 0)
         {
             currentArmor -= damage;
-            AudioManager.instance.PlaySFX(Random.Range(1, 2));
+            //AudioManager.instance.PlaySFX(Random.Range(1, 2));
 
             armorBar.SetArmor(currentArmor);
         }
         else
         {
             currentHealth -= damage;
-            AudioManager.instance.PlaySFX(Random.Range(1, 2));
+            
 
             healthBar.SetHealth(currentHealth);
         }
@@ -119,11 +121,10 @@ public class PlayerDamage : MonoBehaviour
     public void PlayerDeath()
     {
 
-        if (alreadyPlayed)
-        {
-            AudioManager.instance.PlaySFX(18);
+        
+            AudioManager.instance.PlaySFX(30);
             
-        }
+       
         
         playerAnim.SetBool("IsDead", true);
         playerRb.constraints = RigidbodyConstraints2D.FreezeAll;

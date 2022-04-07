@@ -59,12 +59,15 @@ public class KnifeEnemy : MonoBehaviour
 
     void Attack()
     {
+        AudioManager.instance.PlaySFX(33);
+
         knifeSlash.ResetTrigger("Slash");
         knifeSlash.SetTrigger("Slash");
 
         Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
         foreach (Collider2D player in hitPlayer)
         {
+            AudioManager.instance.PlaySFX(24);
             player.GetComponent<PlayerDamage>().TakeDamage(5);
         }
     }

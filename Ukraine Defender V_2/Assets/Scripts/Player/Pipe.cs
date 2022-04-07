@@ -32,12 +32,16 @@ public class Pipe : MonoBehaviour
 
     void Attack()
     {
+        AudioManager.instance.PlaySFX(35);
+
         pipeAnim.ResetTrigger("Hit");
         pipeAnim.SetTrigger("Hit");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach(Collider2D enemy in hitEnemies)
         {
+            AudioManager.instance.PlaySFX(24);
+
             enemy.GetComponent<EnemyHealth>().EnemyTakeDamage(3);
            // bodyHit = Instantiate(bodyHit, transform.position, Quaternion.identity);
         }

@@ -32,13 +32,15 @@ public class Knife : MonoBehaviour
 
     void Attack()
     {
+        AudioManager.instance.PlaySFX(33);
+
         knifeAnim.ResetTrigger("Slash");
         knifeAnim.SetTrigger("Slash");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
         foreach(Collider2D enemy in hitEnemies)
         {
-         
+            AudioManager.instance.PlaySFX(24);
             enemy.GetComponent<EnemyHealth>().EnemyTakeDamage(5);
             //bodyHit = Instantiate(bodyHit, transform.position, Quaternion.identity);
         }

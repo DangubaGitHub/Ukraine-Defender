@@ -25,14 +25,14 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth > 0)
         {
             currentHealth -= damage;
-            AudioManager.instance.PlaySFX(Random.Range(1, 2));
+            
         }
 
         if (currentHealth < 1)
         {
             PlayEnemyDeathAnimation();
             enemyHeadCounter.AddToCounter();
-            AudioManager.instance.PlaySFX(Random.Range(15, 17));
+            AudioManager.instance.PlaySFX(Random.Range(15, 18));
         }
     }
 
@@ -45,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            
+            AudioManager.instance.PlaySFX(Random.Range(1, 2));
             EnemyTakeDamage(1);
         }
     }
