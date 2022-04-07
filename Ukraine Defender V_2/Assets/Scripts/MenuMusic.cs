@@ -26,6 +26,6 @@ public class MenuMusic : MonoBehaviour
 
     public void DestroyMusic()
     {
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }
