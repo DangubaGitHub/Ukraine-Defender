@@ -81,6 +81,8 @@ public class Pickups : MonoBehaviour
                 gunAmmoMax.GetComponentInChildren<TextMeshPro>();
             }
 
+            AudioManager.instance.PlaySFX(32);
+
             Destroy(other.gameObject);
         }
 
@@ -108,6 +110,8 @@ public class Pickups : MonoBehaviour
                 gunAmmoMax.GetComponentInChildren<TextMeshPro>();
             }
 
+            AudioManager.instance.PlaySFX(32);
+
             Destroy(other.gameObject);
         }
 
@@ -133,6 +137,7 @@ public class Pickups : MonoBehaviour
                 grenadeMax.GetComponentInChildren<TextMeshPro>();
             }
 
+            AudioManager.instance.PlaySFX(20);
 
             Destroy(other.gameObject);
         }

@@ -35,6 +35,8 @@ public class Gun : MonoBehaviour
                 {
                     Shoot();
 
+                    AudioManager.instance.PlaySFX(22);
+
                     currentAmmo--;
                     UpdateAmmoCount();
                 }

@@ -26,6 +26,8 @@ public class GrenadePrefab : MonoBehaviour
         //Invoke("EnableCollider", .5f);
         circleCollider.enabled = true;
         EmitExplosion();
+
+        AudioManager.instance.PlaySFX(19);
     }
 
     void EmitExplosion()

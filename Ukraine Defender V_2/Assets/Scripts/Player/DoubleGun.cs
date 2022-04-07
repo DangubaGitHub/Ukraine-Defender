@@ -59,6 +59,8 @@ public class DoubleGun : MonoBehaviour
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
         bulletRb.AddForce(firePoint1.up * bulletForce, ForceMode2D.Impulse);
         EmitMuzzleFlash1();
+
+        AudioManager.instance.PlaySFX(21);
     }
 
     void Shoot2()
@@ -67,6 +69,8 @@ public class DoubleGun : MonoBehaviour
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
         bulletRb.AddForce(firePoint2.up * bulletForce, ForceMode2D.Impulse);
         EmitMuzzleFlash2();
+
+        AudioManager.instance.PlaySFX(21);
     }
 
     void EmitMuzzleFlash1()

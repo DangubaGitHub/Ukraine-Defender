@@ -62,6 +62,8 @@ public class FadeScreen : MonoBehaviour
             {
                 //shouldFadeText = false;
             }
+
+           
         }
     }
 

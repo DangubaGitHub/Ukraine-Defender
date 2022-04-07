@@ -53,7 +53,7 @@ public class GearCrate : MonoBehaviour
                 
                 OpenCrate();
 
-
+                AudioManager.instance.PlaySFX(14);
                
             }
 

@@ -50,6 +50,8 @@ public class GunEnemy : MonoBehaviour
                 bulletRb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
                 EmitMuzzleFlash();
 
+                AudioManager.instance.PlaySFX(22);
+
                 nextShotTime = Time.time + timeBetweenShots;
             }
         }

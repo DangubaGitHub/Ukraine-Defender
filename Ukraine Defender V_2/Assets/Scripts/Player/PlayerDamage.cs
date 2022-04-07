@@ -25,6 +25,8 @@ public class PlayerDamage : MonoBehaviour
 
     public string mainMenu;
 
+    bool alreadyPlayed = false;
+
     private void Awake()
     {
         playerAnim = GetComponent<Animator>();
@@ -64,18 +66,23 @@ public class PlayerDamage : MonoBehaviour
         if (currentArmor > 0)
         {
             currentArmor -= damage;
+            AudioManager.instance.PlaySFX(Random.Range(1, 2));
 
             armorBar.SetArmor(currentArmor);
         }
         else
         {
             currentHealth -= damage;
+            AudioManager.instance.PlaySFX(Random.Range(1, 2));
 
             healthBar.SetHealth(currentHealth);
         }
 
         if(currentHealth < 1)
         {
+
+          
+
             fadeScreenScript.FadeToRed();
             PlayerDeath();
         }
@@ -86,6 +93,8 @@ public class PlayerDamage : MonoBehaviour
     {
         if(other.CompareTag("Health"))
         {
+            AudioManager.instance.PlaySFX(23);
+
             healthBar.SetHealth(maxHealth);
             currentHealth = maxHealth;
             Destroy(other.gameObject);
@@ -96,6 +105,8 @@ public class PlayerDamage : MonoBehaviour
 
         if(other.CompareTag("Armor"))
         {
+            AudioManager.instance.PlaySFX(0);
+
             armorBar.SetArmor(maxArmor);
             currentArmor = maxArmor;
             Destroy(other.gameObject);
@@ -107,12 +118,19 @@ public class PlayerDamage : MonoBehaviour
 
     public void PlayerDeath()
     {
-            playerAnim.SetBool("IsDead", true);
-            playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
-            GetComponent<PlayerController>().enabled = false;
-            GetComponent<WeaponSwitching>().enabled = false;
-          
-            StartCoroutine(DelayManu());
+
+        if (alreadyPlayed)
+        {
+            AudioManager.instance.PlaySFX(18);
+            
+        }
+        
+        playerAnim.SetBool("IsDead", true);
+        playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
+        GetComponent<PlayerController>().enabled = false;
+        GetComponent<WeaponSwitching>().enabled = false;
+
+        StartCoroutine(DelayManu());
     }
 
      IEnumerator DelayManu()
