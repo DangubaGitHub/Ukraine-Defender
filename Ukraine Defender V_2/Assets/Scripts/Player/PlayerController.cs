@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
         {
             movement.x = Input.GetAxis("Horizontal");
             movement.y = Input.GetAxis("Vertical");
+
             mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         }
     }

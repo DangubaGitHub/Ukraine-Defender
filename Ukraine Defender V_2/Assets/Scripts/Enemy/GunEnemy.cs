@@ -20,6 +20,14 @@ public class GunEnemy : MonoBehaviour
 
     [SerializeField] EnemyHealth enemyHealthScript;
 
+    PlayerDamage playerDamageScript;
+    [SerializeField] GameObject playerDamage;
+
+    private void Awake()
+    {
+        playerDamageScript = playerDamage.GetComponent<PlayerDamage>();
+    }
+
     void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
@@ -27,32 +35,36 @@ public class GunEnemy : MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, target.position) < aggroDistance)
+        if (playerDamageScript.currentHealth > 0)
         {
-            Vector2 lookDir = target.position - transform.position;
-            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-            enemyRb.rotation = angle;
 
-            if (Vector2.Distance(transform.position, target.position) > minDistance)
+            if (Vector2.Distance(transform.position, target.position) < aggroDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-            }
+                Vector2 lookDir = target.position - transform.position;
+                float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+                enemyRb.rotation = angle;
 
-            if (Vector2.Distance(transform.position, target.position) < minDistance)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, -moveSpeed * Time.deltaTime);
-            }
+                if (Vector2.Distance(transform.position, target.position) > minDistance)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+                }
 
-            if (Time.time > nextShotTime)
-            {
-                GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-                Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-                bulletRb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-                EmitMuzzleFlash();
+                if (Vector2.Distance(transform.position, target.position) < minDistance)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, target.position, -moveSpeed * Time.deltaTime);
+                }
 
-                AudioManager.instance.PlaySFX(22);
+                if (Time.time > nextShotTime)
+                {
+                    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+                    Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+                    bulletRb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+                    EmitMuzzleFlash();
 
-                nextShotTime = Time.time + timeBetweenShots;
+                    AudioManager.instance.PlaySFX(22);
+
+                    nextShotTime = Time.time + timeBetweenShots;
+                }
             }
         }
 

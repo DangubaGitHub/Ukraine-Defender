@@ -67,5 +67,6 @@ public class ObjectiveScene : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         StartGame();
+        MenuMusic.instance.DestroyMusic();
     }
 }

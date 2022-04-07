@@ -20,6 +20,14 @@ public class DoubleGunEnemy : MonoBehaviour
     [SerializeField] Animator enemyAnim;
     [SerializeField] EnemyHealth enemyHealthScript;
 
+    PlayerDamage playerDamageScript;
+    [SerializeField] GameObject playerDamage;
+
+    private void Awake()
+    {
+        playerDamageScript = playerDamage.GetComponent<PlayerDamage>();
+    }
+
     void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
@@ -27,30 +35,33 @@ public class DoubleGunEnemy : MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, target.position) < aggroDistance)
+        if (playerDamageScript.currentHealth > 0)
         {
-            Vector2 lookDir = target.position - transform.position;
-            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-            enemyRb.rotation = angle;
 
-            if (Vector2.Distance(transform.position, target.position) > minDistance)
+            if (Vector2.Distance(transform.position, target.position) < aggroDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+                Vector2 lookDir = target.position - transform.position;
+                float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+                enemyRb.rotation = angle;
+
+                if (Vector2.Distance(transform.position, target.position) > minDistance)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+                }
+
+                if (Vector2.Distance(transform.position, target.position) < minDistance)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, target.position, -moveSpeed * Time.deltaTime);
+                }
+
+                if (Time.time > nextShotTime)
+                {
+                    Shoot1();
+                    Invoke("Shoot2", .1f);
+
+                    nextShotTime = Time.time + timeBetweenShots;
+                }
             }
-
-            if (Vector2.Distance(transform.position, target.position) < minDistance)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, -moveSpeed * Time.deltaTime);
-            }
-
-            if (Time.time > nextShotTime)
-            {
-                Shoot1();
-                Invoke("Shoot2", .1f); 
-
-                nextShotTime = Time.time + timeBetweenShots;
-            }
-
         }
 
         if(enemyHealthScript.currentHealth <= 0)

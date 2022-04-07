@@ -25,7 +25,7 @@ public class PlayerDamage : MonoBehaviour
 
     public string mainMenu;
 
-    bool alreadyPlayed = false;
+    
 
     private void Awake()
     {
@@ -122,7 +122,7 @@ public class PlayerDamage : MonoBehaviour
     {
 
         
-            AudioManager.instance.PlaySFX(30);
+        AudioManager.instance.PlaySFX(30);
             
        
         
