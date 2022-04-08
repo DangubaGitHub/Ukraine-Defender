@@ -52,7 +52,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5080266735241088099
 Transform:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
   moveSpeed: 0.8
   target: {fileID: 0}
   minDistance: 0.3
-  aggroDistance: 5
+  aggroDistance: 3
   enemyAnim: {fileID: 5080266735241088097}
   attackPoint: {fileID: 2117580965}
   attackRange: 0.15
@@ -202,6 +202,7 @@ MonoBehaviour:
     m_Bits: 256
   timeBetweenHits: 0.5
   enemyHealthScript: {fileID: 2047696725}
+  playerDamage: {fileID: 0}
 --- !u!114 &2047696725
 MonoBehaviour:
   m_ObjectHideFlags: 0

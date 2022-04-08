@@ -37,12 +37,15 @@ public class PauseMenu : MonoBehaviour
         if(isPaused)
         {
             isPaused = false;
+            AudioManager.instance.PlaySFX(37);
             pauseScreen.SetActive(false);
             Time.timeScale = 1;
         }
         else
         {
+            
             isPaused = true;
+            
             pauseScreen.SetActive(true);
             Time.timeScale = 0;
         }
@@ -50,6 +53,8 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        AudioManager.instance.PlaySFX(37);
+        fadeScreenScript.FadeToRed();
         SceneManager.LoadScene(mainMenu);
         Time.timeScale = 1;
     }

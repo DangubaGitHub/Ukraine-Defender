@@ -85,7 +85,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4387925203589546894
 Transform:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   moveSpeed: 1
   target: {fileID: 0}
   minDistance: 1.2
-  aggroDistance: 5
+  aggroDistance: 3
   firePoint1: {fileID: 4387925202920968221}
   firePoint2: {fileID: 4387925202887418409}
   bulletPrefab: {fileID: 1473978771805293163, guid: b163f01ab37ef244bbe24d4e33dc2e4f, type: 3}
@@ -237,6 +237,7 @@ MonoBehaviour:
   timeBetweenShots: 1
   enemyAnim: {fileID: 1170588735}
   enemyHealthScript: {fileID: 1170588736}
+  playerDamage: {fileID: 0}
 --- !u!114 &1170588736
 MonoBehaviour:
   m_ObjectHideFlags: 0

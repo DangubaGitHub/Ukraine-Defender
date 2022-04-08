@@ -193,7 +193,7 @@ MonoBehaviour:
   moveSpeed: 0.8
   target: {fileID: 0}
   minDistance: 0.3
-  aggroDistance: 5
+  aggroDistance: 3
   knifeSlash: {fileID: 905794812060585077}
   enemyHealthScript: {fileID: 599339050}
   attackPoint: {fileID: 227554289}
@@ -202,6 +202,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   timeBetweenHits: 0.5
+  playerDamage: {fileID: 0}
 --- !u!114 &599339050
 MonoBehaviour:
   m_ObjectHideFlags: 0

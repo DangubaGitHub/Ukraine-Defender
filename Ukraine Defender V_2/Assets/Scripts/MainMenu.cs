@@ -28,6 +28,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
+        MenuAudioManager.instance.PlaySFX(0);
         fadeScreenScript.FadeToBlack();
         //SceneManager.LoadScene(startGame);
         StartCoroutine(DelayPlay());
@@ -35,6 +36,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        MenuAudioManager.instance.PlaySFX(3);
         fadeScreenScript.FadeToRed();
         StartCoroutine(DelayQuit());
     }
