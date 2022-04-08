@@ -17,6 +17,7 @@ public class PauseMenu : MonoBehaviour
     private void Awake()
     {
         fadeScreenScript = fadeScreen.GetComponent<FadeScreen>();
+        isPaused = false;
     }
 
     void Start()
